@@ -4,11 +4,22 @@
   <!-- basic.html -->
   <title>basic.html</title>
   <meta charset = "UTF-8" />
+  <script>
+      window.ga = { loaded: null };
+      window.ga.loaded = () => true;
+      window.ga.send = () => console.log('I sent an event to GA');
+      window.ikea = {
+        cookieConsent: {
+          hasConsent: null,
+        },
+      };
+      window.ikea.cookieConsent.hasConsent = (category) => false;
+  </script>
 </head>
-<body>
-  <h1>Search Component</h1>
-  <a href="./index.html">Back</a>
-  <km-faq-accordion></km-faq-accordion>
-  <script src="./faq-dir/direflowBundle.js"></script>
-</body>
+  <body>
+    <h1>Search Component</h1>
+    <a href="./index.html">Back</a>
+    <km-search-integration></km-search-integration>
+    <script src="./search-dir/direflowBundle.js"></script>
+  </body>
 </html>
