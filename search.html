@@ -4,6 +4,17 @@
   <!-- basic.html -->
   <title>basic.html</title>
   <meta charset = "UTF-8" />
+  <script>
+      window.ga = { loaded: null };
+      window.ga.loaded = () => true;
+      window.ga.send = () => console.log('I sent an event to GA');
+      window.ikea = {
+        cookieConsent: {
+          hasConsent: null,
+        },
+      };
+      window.ikea.cookieConsent.hasConsent = (category) => false;
+  </script>
 </head>
   <body>
     <h1>Search Component</h1>
